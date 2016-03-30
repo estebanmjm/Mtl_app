@@ -1,0 +1,47 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Motels</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Address</th>
+      <th>Area</th>
+      <th>Manager</th>
+      <th>Mobile</th>
+      <th>Phone</th>
+      <th>Web site</th>
+      <th>Logo</th>
+      <th>Description</th>
+      <th>Latitude</th>
+      <th>Longitude</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @motels.each do |motel| %>
+      <tr>
+        <td><%= motel.name %></td>
+        <td><%= motel.address %></td>
+        <td><%= motel.area %></td>
+        <td><%= motel.manager %></td>
+        <td><%= motel.mobile %></td>
+        <td><%= motel.phone %></td>
+        <td><%= motel.web_site %></td>
+        <td><%= motel.logo %></td>
+        <td><%= motel.description %></td>
+        <td><%= motel.latitude %></td>
+        <td><%= motel.longitude %></td>
+        <td><%= link_to 'Show', motel %></td>
+        <td><%= link_to 'Edit', edit_motel_path(motel) %></td>
+        <td><%= link_to 'Destroy', motel, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Motel', new_motel_path %>
