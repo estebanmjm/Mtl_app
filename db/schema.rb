@@ -11,7 +11,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160330225648) do
+ActiveRecord::Schema.define(version: 20160401221810) do
+
+  create_table "comments", force: :cascade do |t|
+    t.text     "content"
+    t.integer  "motel_id"
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "motels", force: :cascade do |t|
     t.string   "name"
@@ -25,6 +33,42 @@ ActiveRecord::Schema.define(version: 20160330225648) do
     t.text     "description"
     t.string   "latitude"
     t.string   "longitude"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.integer  "rating"
+    t.integer  "vote"
+  end
+
+  create_table "offers", force: :cascade do |t|
+    t.string   "name"
+    t.text     "description"
+    t.string   "pic"
+    t.integer  "motel_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  create_table "photos", force: :cascade do |t|
+    t.string   "pic"
+    t.integer  "room_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "rooms", force: :cascade do |t|
+    t.string   "type"
+    t.integer  "quantity"
+    t.float    "price"
+    t.text     "description"
+    t.integer  "motel_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  create_table "services", force: :cascade do |t|
+    t.string   "name"
+    t.text     "description"
+    t.integer  "motel_id"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end

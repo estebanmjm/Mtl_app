@@ -1,13 +1,14 @@
-<h2>Log in</h2>
+
+<h2>INICIAR SESIÓN</h2>
 
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
   <div class="field">
-    <%= f.label :email %><br />
+    <%= f.label :email, 'Correo electrónico' %><br />
     <%= f.email_field :email, autofocus: true %>
   </div>
 
   <div class="field">
-    <%= f.label :password %><br />
+    <%= f.label :password, 'Contrasena' %><br />
     <%= f.password_field :password, autocomplete: "off" %>
   </div>
 
@@ -24,3 +25,10 @@
 <% end %>
 
 <%= render "devise/shared/links" %>
+
+<h2>Qué hacemos?<h2>
+<ul>
+  <li>Localizacion y busqueda de moteles en tu cercania</li>
+  <li>Consulta de ofertas y descuentos de los moteles de la ciudad</li>
+  <li>Disponibilidad de habitaciones</li>
+</ul>
